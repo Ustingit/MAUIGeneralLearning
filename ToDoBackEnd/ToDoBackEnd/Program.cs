@@ -32,8 +32,6 @@ var todos = new List<ToDo>()
 	},
 };
 
-//app.UseHttpsRedirection();
-
 app.MapGet("Todos/get", () =>
 {
 	var items = todos;
