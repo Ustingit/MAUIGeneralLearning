@@ -1,5 +1,5 @@
-﻿using MauiApp1.Services;
-using Microsoft.Extensions.DependencyInjection;
+﻿using MauiApp1.Pages;
+using MauiApp1.Services;
 
 namespace MauiApp1;
 
@@ -18,6 +18,7 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<IRestDataService, RestDataService>();
 		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddTransient<ManageToDoPage>();
 
 		return builder.Build();
 	}

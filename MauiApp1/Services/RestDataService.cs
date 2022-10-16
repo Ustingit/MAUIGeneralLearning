@@ -89,20 +89,6 @@ namespace MauiApp1.Services
 			}
 
 			return todos;
-			/*
-			return new List<ToDo>()
-			{
-				new ToDo
-				{
-					Id = 1,
-					Name = "Go to gym"
-				},
-				new ToDo 
-				{ 
-					Id = 2,
-					Name = "buy groceries"
-				}
-			}; */
 		}
 
 		public async Task<ToDo> UpdateAsync(ToDo todo)
