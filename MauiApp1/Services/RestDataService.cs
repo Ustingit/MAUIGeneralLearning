@@ -12,17 +12,12 @@ namespace MauiApp1.Services
 		private readonly Uri _url;
 		private readonly JsonSerializerOptions _jsonOptions;
 
-		public RestDataService()
+		public RestDataService(HttpClient httpClient)
 		{
-			_httpClient = new HttpClient() { 
-				Timeout = TimeSpan.FromSeconds(3)
-			};
-
+			_httpClient = httpClient;
 			_baseAddress = DeviceInfo.Platform == DevicePlatform.Android
 				? "http://10.0.2.2:5151"
 				: "https://localhost:7151";
-
-			Console.WriteLine("Address is:  ", _baseAddress);
 
 			_url = new Uri($"{_baseAddress}/Todos");
 			_jsonOptions = new JsonSerializerOptions
